@@ -54,6 +54,9 @@ def git_add_commit_push():
 #     except (KeyboardInterrupt, SystemExit):
 #         logging.info("Scheduler stopped.")
 
+
+
+# REPO_PATH = '/home/frusher/Desktop/LLMProject'
 def main():
     """Schedules the git tasks and starts the scheduler."""
     scheduler = BlockingScheduler()

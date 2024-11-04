@@ -118,3 +118,21 @@
 2024-11-04 07:51:19,223:INFO:Job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:51:28 EAT)" executed successfully
 2024-11-04 07:51:28,457:INFO:Running job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:51:38 EAT)" (scheduled at 2024-11-04 07:51:28.457047+03:00)
 2024-11-04 07:51:28,458:INFO:Running job "git_add_commit_push (trigger: interval[0:00:15], next run at: 2024-11-04 07:51:28 EAT)" (scheduled at 2024-11-04 07:51:28.457513+03:00)
+2024-11-04 07:51:29,191:ERROR:Git pull failed: Cmd('git') failed due to: exit code(128)
+  cmdline: git pull -v -- origin
+  stderr: 'error: Your local changes to the following files would be overwritten by merge:
+fatal: Cannot fast-forward your working tree.'
+2024-11-04 07:51:29,191:INFO:Job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:51:38 EAT)" executed successfully
+2024-11-04 07:51:30,597:INFO:Git add, commit, and push successful.
+2024-11-04 07:51:30,597:INFO:Job "git_add_commit_push (trigger: interval[0:00:15], next run at: 2024-11-04 07:51:43 EAT)" executed successfully
+2024-11-04 07:51:31,770:INFO:Scheduler stopped.
+2024-11-04 08:01:04,827:INFO:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-11-04 08:01:04,827:INFO:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-11-04 08:01:04,827:INFO:Scheduler started.
+2024-11-04 08:01:04,828:INFO:Added job "git_pull" to job store "default"
+2024-11-04 08:01:04,829:INFO:Added job "git_add_commit_push" to job store "default"
+2024-11-04 08:01:04,829:INFO:Scheduler started
+2024-11-04 08:01:14,828:INFO:Running job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 08:01:14 EAT)" (scheduled at 2024-11-04 08:01:14.827017+03:00)
+2024-11-04 08:01:15,680:INFO:Git pull successful.
+2024-11-04 08:01:15,680:INFO:Job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 08:01:24 EAT)" executed successfully
+2024-11-04 08:01:19,828:INFO:Running job "git_add_commit_push (trigger: interval[0:00:15], next run at: 2024-11-04 08:01:34 EAT)" (scheduled at 2024-11-04 08:01:19.827390+03:00)
