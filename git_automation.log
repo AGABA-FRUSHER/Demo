@@ -95,3 +95,19 @@
 2024-11-04 07:41:55,728:ERROR:An unexpected error occurred during git pull: 'IterableList' object has no attribute 'origin'
 2024-11-04 07:41:55,729:INFO:Job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:42:05 EAT)" executed successfully
 2024-11-04 07:42:00,716:INFO:Running job "git_add_commit_push (trigger: interval[0:00:15], next run at: 2024-11-04 07:42:15 EAT)" (scheduled at 2024-11-04 07:42:00.715347+03:00)
+2024-11-04 07:42:04,184:ERROR:An unexpected error occurred during git commit/push: 'IterableList' object has no attribute 'origin'
+2024-11-04 07:42:04,184:INFO:Job "git_add_commit_push (trigger: interval[0:00:15], next run at: 2024-11-04 07:42:15 EAT)" executed successfully
+2024-11-04 07:42:05,715:INFO:Running job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:42:15 EAT)" (scheduled at 2024-11-04 07:42:05.715055+03:00)
+2024-11-04 07:42:05,716:ERROR:An unexpected error occurred during git pull: 'IterableList' object has no attribute 'origin'
+2024-11-04 07:42:05,716:INFO:Job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:42:15 EAT)" executed successfully
+2024-11-04 07:42:11,395:INFO:Scheduler stopped.
+2024-11-04 07:50:58,457:INFO:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-11-04 07:50:58,457:INFO:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-11-04 07:50:58,458:INFO:Scheduler started.
+2024-11-04 07:50:58,459:INFO:Added job "git_pull" to job store "default"
+2024-11-04 07:50:58,459:INFO:Added job "git_add_commit_push" to job store "default"
+2024-11-04 07:50:58,459:INFO:Scheduler started
+2024-11-04 07:51:08,458:INFO:Running job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:51:08 EAT)" (scheduled at 2024-11-04 07:51:08.457047+03:00)
+2024-11-04 07:51:09,298:INFO:Git pull successful.
+2024-11-04 07:51:09,298:INFO:Job "git_pull (trigger: interval[0:00:10], next run at: 2024-11-04 07:51:18 EAT)" executed successfully
+2024-11-04 07:51:13,458:INFO:Running job "git_add_commit_push (trigger: interval[0:00:15], next run at: 2024-11-04 07:51:28 EAT)" (scheduled at 2024-11-04 07:51:13.457513+03:00)
