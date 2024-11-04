@@ -74,59 +74,48 @@
 # if __name__ == "__main__":
 #     main()
 
+# schedule.every(10).seconds.do(git_pull)
+
+
+
 import schedule
 import time
+import subprocess
 import logging
-from git import Repo, GitCommandError
-import os
+from datetime import datetime
 
 # Configure logging
-logging.basicConfig(filename='git_automation.log', level=logging.ERROR)
+logging.basicConfig(
+    filename='git_automation.log',
+    level=logging.INFO,
+    format='%(asctime)s:%(levelname)s:%(message)s'
+)
 
-# Set the path to the repository
-repo_path = '/home/frusher/Desktop/LLMProject'
-
+# Function to run git pull
 def git_pull():
     try:
-        # Change the working directory to the repository path
-        os.chdir(repo_path)
-        # Initialize the repo object
-        repo = Repo(repo_path)
-        # Perform a git pull
-        repo.remotes.origin.pull()
-        logging.info("Git pull successful.")
-    except GitCommandError as gce:
-        logging.error(f"Git pull failed: {gce}")
-    except Exception as e:
-        logging.error(f"Error during git pull: {e}")
+        subprocess.check_call(['git', 'pull'])
+        logging.info("Git pull executed successfully.")
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Git pull failed: {e}")
 
-def git_push():
+# Function to run git add, commit, and push
+def git_commit_push():
     try:
-        # Change the working directory to the repository path
-        os.chdir(repo_path)
-        # Initialize the repo object
-        repo = Repo(repo_path)
-        # Perform git add, commit, and push
-        repo.git.add(A=True)
-        repo.git.commit(m='Automated backup commit')
-        repo.remotes.origin.push()
-        logging.info("Git push successful.")
-    except GitCommandError as gce:
-        logging.error(f"Git push failed: {gce}")
-    except Exception as e:
-        logging.error(f"Error during git push: {e}")
+        subprocess.check_call(['git', 'add', '.'])
+        subprocess.check_call(['git', 'commit', '-m', f"Backup commit: {datetime.now()}"])
+        subprocess.check_call(['git', 'push'])
+        logging.info("Git commit and push executed successfully.")
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Git commit/push failed: {e}")
 
-# Schedule the git pull every morning at 7:00 AM
-# schedule.every().day.at("07:00").do(git_pull)
+# Scheduling git pull every morning at 7 AM
 schedule.every(10).seconds.do(git_pull)
 
+# Scheduling git commit and push every evening at 7 PM
+schedule.every(10).seconds.do(git_commit_push)
 
-# Schedule the git push every evening at 7:00 PM
-# schedule.every().day.at("19:00").do(git_push)
-schedule.every(10).seconds.do(git_push)
-
-
-# Run the scheduled tasks
+# Running the scheduler indefinitely
 while True:
     schedule.run_pending()
     time.sleep(1)
